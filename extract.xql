@@ -4,8 +4,14 @@ let $param := map{
           "doctype-system" : "dblp.dtd"          
 }
 return file:write("C:\Users\isaac\Downloads\A2\Assignment2-spec\DBE-A2-answ/mydblp.xml",  <dblp>
+<MyArticles>
 { 
     for $x in doc("../dblp/dblp.xml")
       return $x//article
-}</dblp>
+}</MyArticles><MyBooks>
+{
+  for $x in doc("../dblp/dblp.xml")
+      return $x//book
+}
+</MyBooks></dblp>
 , $param)
